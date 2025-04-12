@@ -34,9 +34,9 @@ body {
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px 0px; 
-  margin: 3px 0;
+  grid-template-columns: repeat(3, 0fr);
+  align-items: center;
+  justify-content: center;
 }
 
 .square {
@@ -120,30 +120,12 @@ body {
   background: rgba(255, 255, 255, 0.3);
 }
 
-footer {
-  font-size: 0.9rem;
-  margin-top: 40px;
-  color: #fefce8;
-  text-align: center;
-  opacity: 0.7;
-}
-
-footer a {
-  color: #6366f1;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
 
 .square {
   width: 100px;
   height: 100px;
   background-color: white;
-  border: 2px solid gray;
+  border: 2px solid rgb(112, 9, 168);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,12 +163,9 @@ button {
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(122, 37, 233, 0.3);
 }
 
-.info-block p {
-  animation: fadeIn 1.5s ease-out;
-}
 
 @keyframes fadeIn {
   0% {
@@ -195,4 +174,46 @@ button:hover {
   100% {
     opacity: 1;
   }
+}
+
+.game-info {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.game-info p {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.game-info .flex {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.statistics {
+  margin-top: 1rem; 
+  font-size: 1.125rem; 
+  color: #000000;
+  text-align: center; 
+}
+
+.statistics p {
+  margin: 0.5rem 0; 
+  color: #000000; 
+}
+
+.statistics .highlight {
+  font-weight: bold;
+  color: #000000; 
+}
+
+.statistics .separator {
+  margin: 0 0.75rem;
 }

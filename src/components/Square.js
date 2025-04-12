@@ -1,6 +1,6 @@
 import React from "react";
-import Cross from "./Cross";  // Імпортуємо компонент Cross
-import Circle from "./Circle"; // Імпортуємо компонент Circle
+import Cross from "./Cross";  
+import Circle from "./Circle"; 
 
 export default function Square({ value, onClick, isWinning }) {
   return (

@@ -54,11 +54,9 @@ export default function Game({ playerX, playerO }) {
 
   return (
     <div className="text-center text-white p-6 bg-opacity-75 backdrop-blur-sm rounded-xl shadow-2xl w-full max-w-3xl">
-      <h1 className="game-title">
-        Tic Tac Toe
-      </h1>
+      <h1 className="game-title">Tic Tac Toe</h1>
       <Board squares={board} onClick={handleClick} winLine={winnerInfo.line} />
-      <div className="mt-6">
+      <div className="game-info mt-6">
         {winnerInfo.winner ? (
           <p className="text-2xl text-green-400 animate-pulse">
             🏆 Переможець: {winnerInfo.winner === 'X' ? wins.X.name : wins.O.name} ({winnerInfo.winner}) за {moves} ходів!
@@ -66,7 +64,7 @@ export default function Game({ playerX, playerO }) {
         ) : draw ? (
           <p className="text-2xl text-yellow-300">Нічия!</p>
         ) : (
-          <p className="text-xl">Хід: {xIsNext ? "X" : "O"}</p>
+          <p className="text-xl">Хід: {xIsNext ? `${wins.X.name} (X)` : `${wins.O.name} (O)`}</p>
         )}
         <div className="flex gap-4 justify-center mt-4">
           <button
@@ -83,9 +81,15 @@ export default function Game({ playerX, playerO }) {
           </button>
         </div>
       </div>
-      <div className="mt-6 text-sm text-gray-200">
+
+      <div className="mt-6 statistics">
         <p>Статистика перемог:</p>
-        <p>{wins.X.name}: {wins.X.wins} | {wins.O.name}: {wins.O.wins}</p>
+        <p>
+           <span className="highlight">{wins.X.name}: {wins.X.wins}</span>
+           <span className="separator">|</span>
+           <span className="highlight">{wins.O.name}: {wins.O.wins}</span>
+         </p>
+
       </div>
     </div>
   );
